@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../utils/API";
 
 class SearchResultConatiner extends Component {
 
@@ -22,7 +23,7 @@ class SearchResultConatiner extends Component {
 
     searchQuery(query) {
 
-
+        API(query).then(res => this.setState({ results: res.data.data })).catch(err => console.log(err));
     }
 
     render() {
