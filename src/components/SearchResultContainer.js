@@ -31,7 +31,12 @@ class SearchResultConatiner extends Component {
             <>
                 <input type="text" name="search" value={this.state.search} onChange={this.handleInputChange}></input>
                 <button type="submit" onClick={this.handleSubmitForm}>Submit</button>
+                <ul>
+                    {this.state.results.map(result => (
 
+                        <li key={result.id}><img alt={result.title} src={result.images.original.url}></img></li>
+                    ))}
+                </ul>
             </>
         )
     }
